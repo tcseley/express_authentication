@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcrypt');
 const {
   Model
 } = require('sequelize');
@@ -53,5 +54,24 @@ module.exports = (sequelize, DataTypes) => {
   //   sequelize,
   //   modelName: 'user',
   // });
+  user.addhook('beforeCreate', (pendingUser) => {
+    let hash = brcypt.hashSync(pendingUser.password, 12);
+    pendingUser.password = hash;
+  });
+
+  user.prototype.validPassword = function(typePassword) {
+    let isCorrectPassword = bcrypt.compareSync(typedPassword, this.passowrd);
+
+    return isCorrectPassword;
+  }
+
+  user.prototype.toJSON = function () {
+    let userData = this.get();
+    delete userData.password;
+
+    return userData;
+  }
+
+
   return user;
 };
