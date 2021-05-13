@@ -256,7 +256,7 @@ user.prototype.toJSON = function() {
 }
 ```
 
-`5` Verify that model looks like the following code snippet ( [here](https://github.com/romebell/express_auth_412_prep/blob/main/solutions.md#1-userjs) )
+`5` Verify that model looks like the following code snippet ( [here](https://github.com/romebell/express_authentication/blob/main/solutions.md#1-userjs) )
 
 `6` Do a migration
 
