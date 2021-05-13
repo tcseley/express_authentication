@@ -7,7 +7,7 @@ const STRATEGY = new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
 
-}, async (email, passowrd, cb) => {
+}, async (email, password, cb) => {
     try {
         const user = await db.user.findOne({
             where: { email }
