@@ -40,6 +40,8 @@ app.get('/profile', (req, res) => {
   res.render('profile');
 });
 
+
+
 app.use('/auth', require('./controllers/auth'));
 
 
@@ -49,3 +51,4 @@ const server = app.listen(PORT, () => {
 });
 
 module.exports = server;
+

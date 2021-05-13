@@ -18,7 +18,7 @@ const STRATEGY = new LocalStrategy({
             cb(null, user);
         }
     } catch (err) {
-        console.log('---------------Error Below----------------')
+        console.log('---------------Error Below----------------');
         console.log(err);
     }
 });
@@ -40,6 +40,6 @@ passport.deserializeUser(async (id, cb) => {
     }
 });
 
-passport.use(STRTEGY);
+passport.use(STRATEGY);
 
 module.exports = passport;
