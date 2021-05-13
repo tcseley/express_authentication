@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
   //   sequelize,
   //   modelName: 'user',
   // });
-  user.addhook('beforeCreate', (pendingUser) => {
+  user.addHook('beforeCreate', (pendingUser) => {
     let hash = brcypt.hashSync(pendingUser.password, 12);
     pendingUser.password = hash;
   });
@@ -65,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
     return isCorrectPassword;
   }
 
-  user.prototype.toJSON = function () {
+  user.prototype.toJSON = function() {
     let userData = this.get();
     delete userData.password;
 
