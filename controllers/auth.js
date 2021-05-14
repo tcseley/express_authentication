@@ -45,7 +45,7 @@ router.post('/signup', async (req, res) => {
   } catch (error) {
     console.log('******** Error ********');
     console.log(error);
-    req.flash('error', 'Either email of password is incorrect.');
+    req.flash('error', 'Either email or password is incorrect.');
     res.redirect('/auth/signup');
   }
 });
